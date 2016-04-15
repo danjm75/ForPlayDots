@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dots for Play</title>
+	<link rel="stylesheet" href="dots.css">
+	<script type="text/javascript" src="paper-full.js"></script>
+	<!-- Define inlined PaperScript associate it with myCanvas -->
+	<script type="text/paperscript" canvas="myCanvas">
+	<!-- start with for loop -->
+
+	<!-- for loop for x rows -->
+	for(var x = 0; x < 1700; x+=100){
+	<!-- for loop for y columns -->
+	  for(var y = 0; y < 1000; y+=100){
+	  <!-- use new for the Path object with .Circle(paperjs method) -->
+	  <!-- each loop adds a new x and y and the color to the new dot -->
+	  new Path.Circle(new Point(x,y), 10).fillColor = randomColor();
+	  }
+	
+	
+
+function randomColor(){
+	//pick a "red" from 0 - 255
+	var r = Math.floor(Math.random() * 256);
+	//pick a "green" from  0 -255
+	var g = Math.floor(Math.random() * 256);
+	//pick a "blue" from  0 -255
+	var b = Math.floor(Math.random() * 256);
+	return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
+}	
+	
+	
+
+
+
+
+</script>
+</head>
+<body>
+	<canvas id='myCanvas' resize></canvas>	
+</body>
+</html>
